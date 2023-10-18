@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link href="../assets/css/login.css" rel="stylesheet">
+    <link href="../assets/css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="navigation">
+        <div class="navigation-left">
+            <div class="navigation-left__logo">
+                <a href="homepage.html">
+                    <img src="../assets/img/logo.jpg"
+                         alt="logo"/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="login-content">
+                <h1>Log in to your IKEA account</h1>
+                <p>Get a more personalised experience where you don't need to fill in your info every time.</p>
+            </div>
+            <div class="login_container">
+                <form class="login--form" method="POST" id="form-1">
+                    <h2>Log in</h2>
+                    <p>Log in or join IKEA today to benefit from a more personalised experience</p>
+                    <div class="form-group">
+                        <label for="email">Email address (username)</label><br>
+                        <input type="email" id="email" name="email" required value class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label><br>
+                        <input type="password" id="password" name="password" required class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+                    <span class="reset-password"><a href="#"><b>Forgot your password?</b></a></span>
+                    <input type="submit" value="Continue">
+                </form>
+                <a href="register.html">
+                    <button class="button-create" role="button">Create account</button>
+                </a>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-left">
+                <span class="footer-credit">© Inter IKEA Systems B.V. 1999-2023
+                </span>
+                </div>
+                <div class="footer-right">
+                    <ul class="footer-logo">
+                        <li>
+                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
