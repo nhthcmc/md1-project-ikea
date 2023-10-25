@@ -13,13 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let flag = true;
 
             for (let i = 0; i < listUsers.length; i++) {
-                //kiểm tra email user đăng ký đã tồn tại chưa
                 if (listUsers[i].email === data.email) {
                     flag = false;
                     break;
                 }
             }
-            //email user đăng ký chưa tồn tại => cho đăng ký
             if (flag) {
                 data.idUser = uuid()
                 data.cartUser = []

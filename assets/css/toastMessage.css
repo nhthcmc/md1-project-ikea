@@ -81,22 +81,22 @@
     font-size: 24px;
 }
 
-.toast--warning {
-    border-color: yellow;
+.toast--login-demand {
+    border-color: #FBDA0C;
     background-color: #FCF9E7;
 }
 
-.toast--warning .toast__icon {
-    color: yellow;
+.toast--login-demand .toast__icon {
+    color: #FBDA0C;
     font-size: 24px;
 }
 
-.toast--info {
-    border-color: blue;
+.toast--cart {
+    border-color: #0058A3;
     background-color: #EBF0FD;
 }
 
-.toast--info .toast__icon {
-    color: blue;
+.toast--cart .toast__icon {
+    color: #0058A3;
     font-size: 24px;
 }

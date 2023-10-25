@@ -1,3 +1,17 @@
+//video
+var video = document.getElementById("ads-video");
+// var btn = document.getElementById("myBtn");
+
+// function myFunction() {
+//     if (video.paused) {
+//         video.play();
+//         btn.innerHTML = "Pause";
+//     } else {
+//         video.pause();
+//         btn.innerHTML = "Play";
+//     }
+// }
+
 //banner
 let slideIndex = 0;
 showSlides();

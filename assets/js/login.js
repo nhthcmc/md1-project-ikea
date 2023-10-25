@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 showSuccessLoginToast()
                 localStorage.setItem("checkLogin", checkUser.idUser)
 
-                function goToHomPage() {
+                function goToHomePage() {
                     window.location.href = "homepage.html"
                 }
 
-                setTimeout(goToHomPage, 2000)
+                setTimeout(goToHomePage, 2000)
 
             } else {
                 showErrorLoginToast()

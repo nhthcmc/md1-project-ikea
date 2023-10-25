@@ -65,39 +65,22 @@ function showErrorLoginToast() {
     })
 }
 
-function showWarningRegisterToast() {
+function showLoginDemandToast() {
     toast({
-        title: "Warning: ",
-        message: "Close window!",
-        type: "warning",
+        title: "Please log in",
+        message: "Log in to add products to cart",
+        type: "login-demand",
         duration: 5000
     })
 }
 
-function showWarningLoginToast() {
+function showAddCartToast() {
     toast({
-        title: "Warning: ",
-        message: "Close window!",
-        type: "warning",
+        title: "Added to Cart! ",
+        message: "Added item to cart",
+        type: "cart",
         duration: 5000
     })
 }
 
-function showInfoRegisterToast() {
-    toast({
-        title: "Info: ",
-        message: "Close window!",
-        type: "info",
-        duration: 5000
-    })
-}
-
-function showInfoLoginToast() {
-    toast({
-        title: "Info: ",
-        message: "Close window!",
-        type: "info",
-        duration: 5000
-    })
-}
 
