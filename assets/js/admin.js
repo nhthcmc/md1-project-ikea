@@ -105,19 +105,18 @@ function checkLogout() {
 }
 
 //products-table
-let listProductsStock = JSON.parse(localStorage.getItem("listProducts"))
+let listProductsStock = JSON.parse(localStorage.getItem("listProductsStock"))
 
 function displayProducts() {
-    let newListProductsStock = JSON.parse(localStorage.getItem("listProducts")) || []
     let result = ``;
-    for (let i = 0; i < newListProductsStock.length; i++) {
+    for (let i = 0; i < listProductsStock.length; i++) {
         result += `
         <tr id="product-table-item">
-        <td class="product-table-item-detail"><img id="product-img" src="${newListProductsStock[i].img}"/></td>
-        <td class="product-table-item-detail">${newListProductsStock[i].name}</td>
-        <td class="product-table-item-detail">${newListProductsStock[i].price}</td>
-        <td class="product-table-item-detail">${newListProductsStock[i].text}</td>
-        <td class="product-table-item-detail">${newListProductsStock[i].type}</td>
+        <td class="product-table-item-detail"><img id="product-img" src="${listProductsStock[i].img}"/></td>
+        <td class="product-table-item-detail">${listProductsStock[i].name}</td>
+        <td class="product-table-item-detail">${listProductsStock[i].price}</td>
+        <td class="product-table-item-detail">${listProductsStock[i].text}</td>
+        <td class="product-table-item-detail">${listProductsStock[i].type}</td>
         <td><button onclick="pressEditProducts(${i})">EDIT</button></td>
         <td><button onclick="pressDeleteProducts(${i})">DELETE</button></td>
 </tr>
@@ -131,11 +130,9 @@ function displayProducts() {
     resetValueProducts()
 }
 
-// displayProducts();
 
 function resetValueProducts() {
     setInputValueProducts("product-img", "");
-    // setInputValueProducts("view", "");
     setInputValueProducts("product-name", "");
     setInputValueProducts("product-price", "");
     setInputValueProducts("product-descr", "");
@@ -147,8 +144,6 @@ function getInputValueProducts(id) {
 }
 
 function setInputValueProducts(id, value) {
-    // console.log(id)
-    // console.log("value", value)
     document.getElementById(id).value = value;
 }
 
@@ -177,7 +172,7 @@ function pressDeleteProducts(index) {
 }
 
 function pressEditProducts(index) {
-    let newListProductsStock = JSON.parse(localStorage.getItem("listProducts"))
+    let newListProductsStock = JSON.parse(localStorage.getItem("listProductsStock"))
     let product = newListProductsStock[index];
     setInputValueProducts("product-img", product.img);
     setInputValueProducts("product-name", product.name);
@@ -188,7 +183,7 @@ function pressEditProducts(index) {
 }
 
 function pressSaveProducts() {
-    let newListProductsStock = JSON.parse(localStorage.getItem("listProducts"))
+    let newListProductsStock = JSON.parse(localStorage.getItem("listProductsStock"))
     let index = document.getElementById("saveProduct").value
     let newProduct = newListProductsStock[index];
     newProduct.img = getInputValueProducts("product-img")
@@ -197,7 +192,7 @@ function pressSaveProducts() {
     newProduct.text = getInputValueProducts("product-descr")
     newProduct.type = getInputValueProducts("product-type")
     newListProductsStock[index] = newProduct;
-    localStorage.setItem("listProducts", JSON.stringify(newListProductsStock))
+    localStorage.setItem("listProductsStock", JSON.stringify(newListProductsStock))
     displayProducts()
 }
 
@@ -224,7 +219,6 @@ function displayUsers() {
     resetValueUsers()
 }
 
-// displayUsers();
 
 function resetValueUsers() {
     setInputValueUsers("user-email", "");

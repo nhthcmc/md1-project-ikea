@@ -1,0 +1,114 @@
+/*.order-content {*/
+/*    width: 50%;*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    display: none;*/
+/*    background-color: #fff;*/
+/*    overflow: scroll;*/
+/*    height: 100vh;*/
+/*    border-radius: 50px;*/
+/*    margin: 10px;*/
+/*    padding: 30px;*/
+/*    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+/*}*/
+
+/*.order-content::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
+
+/*.order-list {*/
+/*    flex: 10;*/
+/*}*/
+
+/*.orderListItem {*/
+/*    display: flex;*/
+/*}*/
+
+/*!*.cart-subTotal {*!*/
+/*!*    padding: 15px;*!*/
+/*!*    border-bottom: 1px solid #f5f5f5;*!*/
+/*!*    color: #0058A3;*!*/
+/*!*    font-size: large;*!*/
+/*!*    font-weight: bold;*!*/
+/*!*    !*background-color: #0058A3;*!*!*/
+/*!*    !*color: white;*!*!*/
+/*!*}*!*/
+
+/*.orderItem {*/
+/*    padding: 10px;*/
+/*    border-bottom: 1px solid #f5f5f5;*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*.orderItem-image img {*/
+/*    width: 100px;*/
+/*}*/
+
+/*.orderItem-info {*/
+/*    !*margin-left: 10px;*!*/
+/*    display: grid;*/
+/*    grid-template-columns: 2fr 1fr 1fr 1fr;*/
+/*    align-items: center;*/
+/*    justify-items: center;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*.orderItem-info button {*/
+/*    border: none;*/
+/*    padding: 5px;*/
+/*}*/
+
+.payment--form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 30px;
+}
+
+.form-group {
+    line-height: 25px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.payment-container {
+    align-items: center;
+    border: 2px solid #0058A3;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-right: 30px;
+}
+
+.payment-content {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 30px;
+    margin-left: 30px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #0058A3;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

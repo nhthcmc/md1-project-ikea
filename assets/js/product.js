@@ -861,7 +861,7 @@ function showCart() {
         `
     }
     document.querySelector(".cart-list").innerHTML = result;
-    document.getElementsByClassName("order-list").innerHTML = result;
+    // document.getElementById("order-list").innerHTML = result;
     calculateTotalPrice()
 }
 
@@ -881,6 +881,15 @@ function showCartTotal() {
 showCartTotal();
 
 document.querySelector(".cart-close").addEventListener("click", () => {
+    document.querySelector(".cart-container").style.display = "none";
+    document.querySelector(".nav-container").style.opacity = 1;
+    document.querySelector(".product-container").style.opacity = 1;
+    document.querySelector(".banner-section").style.opacity = 1;
+    document.querySelector(".footer").style.opacity = 1;
+
+})
+
+document.querySelector(".cart-continue-btn").addEventListener("click", () => {
     document.querySelector(".cart-container").style.display = "none";
     document.querySelector(".nav-container").style.opacity = 1;
     document.querySelector(".product-container").style.opacity = 1;
