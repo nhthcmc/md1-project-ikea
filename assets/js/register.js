@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
         formGroupSelector: '.form-group',
         errorSelector: '.form-message',
         onSubmit: function (data) {
-            // console.log(data)
             let listUsers = JSON.parse(localStorage.getItem("listUsers")) || []
             let flag = true;
 

@@ -54,22 +54,22 @@
                         <h3 style="color: black"> Dashboard</h3>
                     </div>
 
-                    <div class="sidebar-option controller">
-                        <span style="color: #0058A3" class="material-symbols-outlined">edit_square</span>
-                        <h3> Controller</h3>
-                    </div>
+                    <!--                    <div class="sidebar-option controller">-->
+                    <!--                        <span style="color: #0058A3" class="material-symbols-outlined">edit_square</span>-->
+                    <!--                        <h3> Controller</h3>-->
+                    <!--                    </div>-->
 
                     <div class="sidebar-option orders">
                         <span style="color: #0058A3" class="material-symbols-outlined">sell</span>
                         <h3> Orders</h3>
                     </div>
 
-                    <div class="sidebar-option users">
+                    <div onclick="displayUsers()" class="sidebar-option users">
                         <span style="color: #0058A3" class="material-symbols-outlined">group</span>
                         <h3> Users</h3>
                     </div>
 
-                    <div class="sidebar-option products">
+                    <div onclick="displayProducts()" class="sidebar-option products">
                         <span style="color: #0058A3" class="material-symbols-outlined">inventory_2</span>
                         <h3> Products</h3>
                     </div>
@@ -79,8 +79,8 @@
                         <h3> Settings</h3>
                     </div>
 
-                    <div class="sidebar-option logout">
-                        <span onclick="checkLogout()" style="color: #0058A3"
+                    <div onclick="checkLogout()" class="sidebar-option logout">
+                        <span style="color: #0058A3"
                               class="material-symbols-outlined">logout</span>
                         <h3>Logout</h3>
                     </div>
@@ -90,7 +90,7 @@
         <div class="admin-content">
             <div class="box-container">
                 <div class="box box-views">
-                    <div class="info">
+                    <div class="box-info">
                         <h2 class="topic-heading">60.5k</h2>
                         <h2 class="topic">Views</h2>
                     </div>
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="box box-likes">
-                    <div class="info">
+                    <div class="box-info">
                         <h2 class="topic-heading">150</h2>
                         <h2 class="topic">Likes</h2>
                     </div>
@@ -106,7 +106,7 @@
                 </div>
 
                 <div class="box box-comments">
-                    <div class="info">
+                    <div class="box-info">
                         <h2 class="topic-heading">320</h2>
                         <h2 class="topic">Comments</h2>
                     </div>
@@ -114,108 +114,129 @@
                 </div>
 
                 <div class="box box-products">
-                    <div class="info">
+                    <div class="box-info">
                         <h2 class="topic-heading">15</h2>
                         <h2 class="topic">Products</h2>
                     </div>
                     <span style="color: white" class="material-symbols-outlined">inventory_2</span>
                 </div>
             </div>
-            <div class="report-container">
-                <table id="admin-product">
-                    <h2 class="table-header">
-                        Products list
-                    </h2>
-                    <thead>
-                    <tr id="admin-product-head">
-                        <th class="product-head-item">Image</th>
-                        <!--<th class="product-head-item">View</th>-->
-                        <th class="product-head-item">Name</th>
-                        <th class="product-head-item">Price</th>
-                        <th class="product-head-item">Text</th>
-                        <th class="product-head-item">Type</th>
-                    </tr>
-                    </thead>
-                    <tbody id="product-table">
+            <div style="display: none" class="report-container">
+                <div class="product-tab">
+                    <table id="product-controller">
+                        <tr>
+                            <th colspan="2" style="text-align: center">
+                                Products controller
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Image</td>
+                            <td><input type="file" id="product-img"/></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" id="product-name"/></td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td><input type="number" id="product-price"/></td>
+                        </tr>
+                        <tr>
+                            <td>Text</td>
+                            <td><input type="text" id="product-descr"/></td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td><input type="text" id="product-type"/></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                <button id="add" onclick="addProducts()">ADD</button>
+                            </td>
+                            <td style="text-align: left">
+                                <button id="saveProduct" onclick="pressSaveProducts()">SAVE</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="admin-product">
+                        <!--                    <caption class="table-header">-->
+                        <!--                        Products list-->
+                        <!--                    </caption>-->
+                        <thead>
+                        <tr id="admin-product-head">
+                            <th class="product-head-item">Image</th>
+                            <!--<th class="product-head-item">View</th>-->
+                            <th class="product-head-item">Name</th>
+                            <th class="product-head-item">Price</th>
+                            <th class="product-head-item">Text</th>
+                            <th class="product-head-item">Type</th>
+                            <th colspan="2" class="product-head-item">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="product-table">
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="user-tab">
+                    <table id="user-controller">
+                        <tr>
+                            <th colspan="2">
+                                Users controller
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="email" id="user-email"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="text" id="user-password"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: left">
+                                <button id="saveUser" onclick="pressSaveUsers()">SAVE</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <table id="admin-user">
+                        <thead>
+                        <tr id="admin-user-head">
+                            <th class="user-head-item">Email</th>
+                            <th class="user-head-item">Password</th>
+                            <th colspan="2" class="user-head-item">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="user-table">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--                <table id="admin-order">-->
+                <!--                    <h3 style="text-align: center">-->
+                <!--                        Orders list-->
+                <!--                    </h3>-->
+                <!--                    <thead>-->
+                <!--                    <tr id="admin-order-head">-->
+                <!--                        <th>ID</th>-->
+                <!--                        <th>Customer</th>-->
+                <!--                        <th>Order</th>-->
+                <!--                        <th>Payment status</th>-->
+                <!--                        <th>Total</th>-->
+                <!--                    </tr>-->
+                <!--                    </thead>-->
+                <!--                    <tbody id=" order-table">-->
+
+                <!--                    </tbody>-->
+                <!--                </table>-->
             </div>
         </div>
-        <!--        <table id="admin-order">-->
-        <!--            <h3 style="text-align: center">-->
-        <!--                Orders list-->
-        <!--            </h3>-->
-        <!--            <thead>-->
-        <!--            <tr id="admin-order-head">-->
-        <!--                <th>ID</th>-->
-        <!--                <th>Customer</th>-->
-        <!--                <th>Order</th>-->
-        <!--                <th>Payment status</th>-->
-        <!--                <th>Total</th>-->
-        <!--            </tr>-->
-        <!--            </thead>-->
-        <!--            <tbody id=" order-table">-->
-
-        <!--            </tbody>-->
-        <!--        </table>-->
-
-        <!--        <table id="admin-user">-->
-        <!--            <h3 style="text-align: center">-->
-        <!--                Users list-->
-        <!--            </h3>-->
-        <!--            <thead id="admin-user-head">-->
-        <!--            <tr>-->
-        <!--                <th>Email</th>-->
-        <!--                <th>Password</th>-->
-
-        <!--            </tr>-->
-        <!--            </thead>-->
-        <!--            <tbody id="user-table">-->
-
-        <!--            </tbody>-->
-        <!--        </table>-->
-
-
-        <!--        <table id="controller">-->
-        <!--            <tr>-->
-        <!--                <th colspan="2" style="text-align: center" id="title">-->
-        <!--                    Controller-->
-        <!--                </th>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>ID</td>-->
-        <!--                <td colspan="1"><input type="number" id="id"/></td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>Name</td>-->
-        <!--                <td colspan="1"><input type="text" id="name"/></td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>Price</td>-->
-        <!--                <td colspan="1"><input type="number" id="price"/></td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>Text</td>-->
-        <!--                <td colspan="1"><input type="text" id="descr"/></td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td>Type</td>-->
-        <!--                <td colspan="1"><input type="text" id="type"/></td>-->
-        <!--            </tr>-->
-        <!--            <tr>-->
-        <!--                <td style="text-align: right">-->
-        <!--                    <button id="add" onclick="add()">ADD</button>-->
-        <!--                </td>-->
-        <!--                <td style="text-align: left">-->
-        <!--                    <button id="save" onclick="pressSave()">SAVE</button>-->
-        <!--                </td>-->
-        <!--            </tr>-->
-        <!--        </table>-->
     </main>
     <script src="../assets/js/admin.js"></script>
-    <script src="../assets/js/global.js"></script>
-    <script src="../assets/js/product.js"></script>
+    <!--    <script src="../assets/js/global.js"></script>-->
+    <!--    <script src="../assets/js/product.js"></script>-->
 </div>
 </body>
 </html>
