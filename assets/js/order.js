@@ -56,4 +56,10 @@
 //
 // displayOrders();
 
-
+//display
+function displayConfirm() {
+    event.preventDefault()
+    document.querySelector(".confirm-content").style.display="flex";
+    document.querySelector(".order-content").style.display="none";
+    document.querySelector(".payment-content").style.display="none";
+}

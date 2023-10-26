@@ -105,7 +105,7 @@ function checkLogout() {
 }
 
 //products-table
-let listProductsStock = JSON.parse(localStorage.getItem("listProductsStock"))
+let listProductsStock = JSON.parse(localStorage.getItem("listProducts"))
 
 function displayProducts() {
     let result = ``;
@@ -172,7 +172,7 @@ function pressDeleteProducts(index) {
 }
 
 function pressEditProducts(index) {
-    let newListProductsStock = JSON.parse(localStorage.getItem("listProductsStock"))
+    let newListProductsStock = JSON.parse(localStorage.getItem("listProducts"))
     let product = newListProductsStock[index];
     setInputValueProducts("product-img", product.img);
     setInputValueProducts("product-name", product.name);
@@ -206,8 +206,8 @@ function displayUsers() {
         <tr id="user-table-item">
         <td class="user-table-item-detail">${newListUsers[i].email}</td>
         <td class="user-table-item-detail">${newListUsers[i].password}</td>
-        <td><button onclick="pressEditUsers(${i})">EDIT</button></td>
-        <td><button onclick="pressDeleteUsers(${i})">DELETE</button></td>
+        <td><button id="edit-button" onclick="pressEditUsers(${i})">EDIT</button></td>
+        <td><button id="del-button" onclick="pressDeleteUsers(${i})">DELETE</button></td>
       </tr>
         `;
         document.getElementById("user-table").innerHTML = result;

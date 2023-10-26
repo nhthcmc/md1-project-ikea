@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>admin</title>
     <link href="../assets/css/admin.css" rel="stylesheet">
+    <link href="../assets/css/responsive.css" rel="stylesheet">
     <!--        <link href="../assets/css/global.css" rel="stylesheet">-->
     <!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,7 +35,7 @@
                 </a>
             </div>
             <!--            <ion-icon name="reorder-four-outline"></ion-icon>-->
-            <span style="color: #0058A3;" class=" menu material-symbols-outlined">side_navigation</span>
+            <span style="color: #0058A3; display: flex" class=" menu material-symbols-outlined">side_navigation</span>
             <div class="nav-left__dashboard">Dashboard</div>
         </div>
         <div class="nav-right">
@@ -151,7 +152,7 @@
                         </tr>
                         <tr>
                             <td style="text-align: right">
-                                <button id="add" onclick="addProducts()">ADD</button>
+                                <button id="addProduct" onclick="addProducts()">ADD</button>
                             </td>
                             <td style="text-align: left">
                                 <button id="saveProduct" onclick="pressSaveProducts()">SAVE</button>

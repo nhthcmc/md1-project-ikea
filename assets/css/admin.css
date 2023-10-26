@@ -174,15 +174,15 @@ main {
 }
 
 .dashboard {
-    border-left: 5px solid #0058A3;
-    background-color: #badfff;
+    /*border-left: 5px solid #0058A3;*/
+    /*background-color: #badfff;*/
     color: white;
     cursor: pointer;
 }
 
 .dashboard:hover {
-    border-left: 5px solid #010058af;
-    background-color: #004682;
+    /*border-left: 5px solid #010058af;*/
+    /*background-color: #004682;*/
 }
 
 .admin-content {
@@ -280,6 +280,46 @@ main {
 /*    font-weight: 600;*/
 /*    color: #0058A3;*/
 /*}*/
+
+#product-controller {
+    line-height: 25px;
+
+    /*    border: 1px solid #0058A3;*/
+    /*    border-radius: 30px;*/
+    /*    margin: 10px auto;*/
+    /*    padding: 20px;*/
+}
+
+/*#addProduct, #saveProduct:active {*/
+/*    background-color: #0058A3;*/
+/*}*/
+
+#addProduct:hover {
+    color: white;
+    background-color: #0058A3;
+}
+
+#saveProduct:hover {
+    color: white;
+    background-color: #0058A3;
+}
+
+#addProduct, #saveProduct {
+    background-color: white;
+    color: #0058A3;
+    border-color: #0058A3;
+    align-items: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    /*display: flex;*/
+    margin: auto;
+    padding: 10px 21px;
+    text-align: center;
+    text-transform: none;
+    font-size: 100%;
+    line-height: 1.15;
+}
 
 #admin-product {
     max-width: 1160px;
