@@ -91,7 +91,6 @@ input[type="submit"] {
 }
 
 .login-content {
-    /*align-items: center;*/
     display: flex;
     gap: 20px;
     flex-direction: column;

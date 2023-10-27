@@ -152,6 +152,33 @@ let listProductsStock = [
         ]
     },
     {
+        img: "../assets/img/products/arkelstorp-m.avif",
+        view: "../assets/img/products/arkelstorp-v.avif",
+        name: "coffee table arkelstorp",
+        price: 249,
+        text: "Coffee table",
+        type: "living",
+        options: [
+            {
+                src: "../assets/img/products/arkelstorp-m.avif",
+                sizes: [
+                    {
+                        key: "small",
+                        stock: 10
+                    },
+                    {
+                        key: "medium",
+                        stock: 10
+                    },
+                    {
+                        key: "large",
+                        stock: 10
+                    }
+                ]
+            },
+        ]
+    },
+    {
         img: "../assets/img/products/malm-w-m.avif",
         view: "../assets/img/products/malm-v.avif",
         name: "bed malm",
@@ -284,6 +311,32 @@ let listProductsStock = [
         ]
     },
     {
+        img: "../assets/img/products/vitval-m.avif",
+        view: "../assets/img/products/vitval-v.avif",
+        name: "loft bed vitval",
+        price: 299,
+        text: "Loft bed frame",
+        type: "bed",
+        options: [
+            {
+                src: "../assets/img/products/vitval-m.avif",
+                sizes: [
+                    {
+                        key: "small",
+                        stock: 10
+                    },
+                    {
+                        key: "medium",
+                        stock: 10
+                    },
+                    {
+                        key: "large",
+                        stock: 10
+                    }
+                ]
+            }]
+    },
+    {
         img: "../assets/img/products/enhet-m.avif",
         view: "../assets/img/products/enhet-v.jpg",
         name: "kitchen enhet",
@@ -345,6 +398,32 @@ let listProductsStock = [
         options: [
             {
                 src: "../assets/img/products/vadholma-m.avif",
+                sizes: [
+                    {
+                        key: "small",
+                        stock: 10
+                    },
+                    {
+                        key: "medium",
+                        stock: 10
+                    },
+                    {
+                        key: "large",
+                        stock: 10
+                    }
+                ]
+            }]
+    },
+    {
+        img: "../assets/img/products/sunnersta-m.avif",
+        view: "../assets/img/products/sunnersta-v.avif",
+        name: "kitchen sunnersta",
+        price: 210,
+        text: "Mini-kitchen",
+        type: "kitchen",
+        options: [
+            {
+                src: "../assets/img/products/sunnersta-m.avif",
                 sizes: [
                     {
                         key: "small",
@@ -424,6 +503,32 @@ let listProductsStock = [
         options: [
             {
                 src: "../assets/img/products/brogrund-m.avif",
+                sizes: [
+                    {
+                        key: "small",
+                        stock: 10
+                    },
+                    {
+                        key: "medium",
+                        stock: 10
+                    },
+                    {
+                        key: "large",
+                        stock: 10
+                    }
+                ]
+            }]
+    },
+    {
+        img: "../assets/img/products/balungen-m.avif",
+        view: "../assets/img/products/balungen-v.avif",
+        name: "holder balungen",
+        price: 20,
+        text: "Toilet roll holder, chrome-plated",
+        type: "bath",
+        options: [
+            {
+                src: "../assets/img/products/balungen-m.avif",
                 sizes: [
                     {
                         key: "small",
@@ -537,6 +642,32 @@ let listProductsStock = [
                 ]
             }
         ]
+    },
+    {
+        img: "../assets/img/products/ytterskaer-m.avif",
+        view: "../assets/img/products/ytterskaer-v.avif",
+        name: "screen ytterskaer",
+        price: 99,
+        text: "Privacy screen, outdoor",
+        type: "outdoor",
+        options: [
+            {
+                src: "../assets/img/products/ytterskaer-m.avif",
+                sizes: [
+                    {
+                        key: "small",
+                        stock: 10
+                    },
+                    {
+                        key: "medium",
+                        stock: 10
+                    },
+                    {
+                        key: "large",
+                        stock: 10
+                    }
+                ]
+            }]
     },
 ]
 
