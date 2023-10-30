@@ -59,7 +59,6 @@ function deleteSearchInput() {
 function searchInputProduct() {
     let listProducts = JSON.parse(localStorage.getItem("listProducts"))
     let valueSearchInput = document.querySelector(".search-input__product").value;
-    console.log("valueSearchInput", valueSearchInput)
     let resultSearch = []
 
     let userSearch = listProducts.filter(item => {
@@ -69,7 +68,7 @@ function searchInputProduct() {
 }
 
 function renderSearchInput(params) {
-    console.log("params: ", params)
+
     let result = ""
     for (let i = 0; i < params.length; i++) {
         result += `

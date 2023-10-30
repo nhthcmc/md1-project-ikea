@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             if (data.email == "admin@ad.com" && data.password == "admin") {
                 window.location.href = "http://localhost:63342/project-module%201/pages/admin.html?_ijt=ofsffjtb8i12mesruualvktav3&_ij_reload=RELOAD_ON_SAVE"
+                alert("Welcome admin")
             }
             if (checkUser) {
                 showSuccessLoginToast()

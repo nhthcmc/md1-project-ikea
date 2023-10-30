@@ -28,12 +28,11 @@
         <div class="container">
             <div class="order-content">
                 <h1>My order</h1>
-                <div id="order-container">
+                <div class="order-container">
                     <table id="payment-order">
                         <thead>
                         <tr id="payment-order-head">
-                            <th class="payment-order-head-i"></th>
-                            <th class="payment-order-head-i">Item</th>
+                            <th colspan="2" class="payment-order-head-i">Item</th>
                             <th class="payment-order-head-i">Size</th>
                             <th class="payment-order-head-i">Quantity</th>
                             <th class="payment-order-head-i">Price</th>
@@ -91,7 +90,7 @@
                             <input type="radio" name="payment-method"/>
                             <span class="checkmark"></span>
                         </div>
-                        <input onclick="displayConfirm()" class="button-payment" type="submit" value="PLACE ORDER">
+                        <input onclick="placeOrder();" id="payment-button" type="submit" value="PLACE ORDER">
                     </form>
                 </div>
             </div>

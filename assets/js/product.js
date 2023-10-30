@@ -805,8 +805,8 @@ function renderProductDetail(idProduct) {
             <div class="productDetail-main-image">
                 <img src="${productDetail.img}"/>
             </div>
-            <div class="productDetail-image-size">
-            </div>
+<!--            <div class="productDetail-image-size">-->
+<!--            </div>-->
         </div>
         <div class="productDetail-descr">
             <span style="text-transform: uppercase;"><h2 style="font-weight: normal;">${productDetail.name}</h2></span>
@@ -823,7 +823,7 @@ function renderProductDetail(idProduct) {
                 <input type="radio" id="large" value="Large" name="size" class="size-option">
                 <label for="large">Large</label>                
             </div>
-            <div><p>Free shipping for orders from $50</p></div>                
+            <div><p>Free shipping for orders from $20</p></div>                
             <button class="addtoCart-button" onclick="addToCart('${productDetail.id}')">ADD TO CART</button><br>
             <p class="product-idOption">${productDetail.options[0].idOption}</p>
 <!--            <span class="stock-size-small">Small size available in stock: ${productDetail.options[0].sizes[0].stock}</span><br>-->
@@ -876,7 +876,8 @@ function addToCart(idProduct) {
     let checkLogin = localStorage.getItem("checkLogin");
 
     if (checkLogin == null) {
-        showLoginDemandToast();
+        alert("Please login")
+        // showLoginDemandToast();
         return;
     }
 
@@ -884,7 +885,6 @@ function addToCart(idProduct) {
     let listUsers = JSON.parse(localStorage.getItem("listUsers"));
     let selectedSize = null;
     let idOption = document.querySelector(".product-idOption").innerHTML;
-    console.log("idOption")
     const sizeOptions = document.querySelectorAll(".size-option");
     for (let i = 0; i < sizeOptions.length; i++) {
         if (sizeOptions[i].checked) {
@@ -899,7 +899,6 @@ function addToCart(idProduct) {
     let product = listProducts.find((product) => {
         return product.id == idProduct;
     });
-    console.log("product", product)
 
     let option = product.options.find((x) => {
         return x.idOption == idOption
@@ -931,6 +930,7 @@ function addToCart(idProduct) {
                 });
                 localStorage.setItem("listUsers", JSON.stringify(listUsers));
                 showCartTotal()
+                alert("Added to cart!")
             }
         }
     }

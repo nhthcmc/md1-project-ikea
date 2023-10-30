@@ -20,7 +20,6 @@ function Validator(options) {
     }
 }
 
-//
 // const btnRegister = document.getElementById('btn-register');
 //
 // btnRegister.addEventListener('click', function () {
@@ -91,7 +90,7 @@ btnRegister.addEventListener('click', function (event) {
 const emailEle = document.getElementById('email');
 
 function checkValidate() {
-    let emailValue = emailEle.value.trim(); // Loại bỏ khoảng trắng thừa từ đầu và cuối chuỗi
+    let emailValue = emailEle.value.trim();
 
     let isCheck = true;
 
@@ -110,14 +109,14 @@ function checkValidate() {
 
 function setError(ele, message) {
     let parentEle = ele.parentNode;
-    parentEle.classList.remove('success'); // Loại bỏ lớp 'success' nếu có
+    parentEle.classList.remove('success');
     parentEle.classList.add('error');
     parentEle.querySelector('small').innerText = message;
 }
 
 function setSuccess(ele) {
     let parentEle = ele.parentNode;
-    parentEle.classList.remove('error'); // Loại bỏ lớp 'error' nếu có
+    parentEle.classList.remove('error');
     parentEle.classList.add('success');
 }
 

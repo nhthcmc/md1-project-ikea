@@ -34,7 +34,7 @@
                          alt="logo"/>
                 </a>
             </div>
-            <i class="menu fa-solid fa-bars" style="color: #0058A3;display: flex;"></i>
+            <i class="menu fa-solid fa-bars" style="color: #0058A3;display: flex;font-size: 30px"></i>
             <div class="nav-left__dashboard">Dashboard</div>
         </div>
         <!--        <div class="nav-right">-->
@@ -49,11 +49,11 @@
         <div class="sidebar-container">
             <nav class="sidebar">
                 <div class="sidebar-upper-options">
-                    <div class="sidebar-option dashboard">
-                        <span style="color: #0058A3;"
-                              class="sidebar-item material-symbols-outlined">team_dashboard</span>
-                        <h3 style="color: black"> Dashboard</h3>
-                    </div>
+                    <!--                    <div class="sidebar-option dashboard">-->
+                    <!--                        <span style="color: #0058A3;"-->
+                    <!--                              class="sidebar-item material-symbols-outlined">team_dashboard</span>-->
+                    <!--                        <h3 style="color: black"> Dashboard</h3>-->
+                    <!--                    </div>-->
 
                     <!--                    <div class="sidebar-option controller">-->
                     <!--                        <span style="color: #0058A3" class="material-symbols-outlined">edit_square</span>-->
@@ -61,18 +61,19 @@
                     <!--                    </div>-->
 
                     <div onclick="displayOrders()" class="sidebar-option orders">
-                        <span style="color: #0058A3" class="sidebar-item material-symbols-outlined">sell</span>
-                        <h3> Orders</h3>
-                    </div>
-
-                    <div onclick="displayUsers()" class="sidebar-option users">
-                        <span style="color: #0058A3" class="sidebar-item material-symbols-outlined">group</span>
-                        <h3> Users</h3>
+                        <span style="color: #0058A3;font-size: 30px"
+                              class="sidebar-item material-symbols-outlined">sell</span>
+                        <h3> Abandoned Carts</h3>
                     </div>
 
                     <div onclick="displayProducts()" class="sidebar-option products">
-                        <span style="color: #0058A3" class="sidebar-item material-symbols-outlined">inventory_2</span>
+                        <span style="color: #0058A3;font-size: 30px" class="sidebar-item material-symbols-outlined">inventory_2</span>
                         <h3> Products</h3>
+                    </div>
+
+                    <div onclick="displayUsers()" class="sidebar-option users">
+                        <span style="color: #0058A3;font-size: 30px" class="sidebar-item material-symbols-outlined">group</span>
+                        <h3> Users</h3>
                     </div>
 
                     <!--                    <div class="sidebar-option setting">-->
@@ -81,7 +82,7 @@
                     <!--                    </div>-->
 
                     <div onclick="checkLogout()" class="sidebar-option logout">
-                        <span style="color: #0058A3"
+                        <span style="color: #0058A3;font-size: 30px"
                               class="sidebar-item material-symbols-outlined">logout</span>
                         <h3>Logout</h3>
                     </div>
@@ -129,22 +130,23 @@
                         <!--                            Products controller-->
                         <!--                        </caption>-->
                         <thead>
-                        <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Text</th>
-                            <th>Type</th>
-                            <th colspan="2" class="">Actions</th>
+                        <tr id="admin-product-head">
+                            <th class="product-head-item">Image</th>
+                            <!--<th class="product-head-item">View</th>-->
+                            <th class="product-head-item">Name</th>
+                            <th class="product-head-item">Price</th>
+                            <th class="product-head-item">Text</th>
+                            <th class="product-head-item">Type</th>
+                            <th colspan="2" class="product-head-item">Actions</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="controller-table">
                         <tr>
-                            <td><input type="file" id="product-img"/></td>
-                            <td><input type="text" id="product-name"/></td>
-                            <td><input type="number" id="product-price"/></td>
-                            <td><input type="text" id="product-descr"/></td>
-                            <td><input type="text" id="product-type"/></td>
+                            <td class="controller-item"><input type="file" id="product-img"/></td>
+                            <td class="controller-item"><input type="text" id="product-name"/></td>
+                            <td class="controller-item"><input type="number" id="product-price"/></td>
+                            <td class="controller-item"><input type="text" id="product-descr"/></td>
+                            <td class="controller-item"><input type="text" id="product-type"/></td>
                             <td>
                                 <button id="addProduct" onclick="addProducts()">ADD</button>
                             </td>
@@ -158,17 +160,7 @@
                         <!--                    <caption class="table-header">-->
                         <!--                        Products list-->
                         <!--                    </caption>-->
-                        <thead>
-                        <tr id="admin-product-head">
-                            <th class="product-head-item">Image</th>
-                            <!--<th class="product-head-item">View</th>-->
-                            <th class="product-head-item">Name</th>
-                            <th class="product-head-item">Price</th>
-                            <th class="product-head-item">Text</th>
-                            <th class="product-head-item">Type</th>
-                            <th colspan="2" class="product-head-item">Actions</th>
-                        </tr>
-                        </thead>
+
                         <tbody id="product-table">
                         </tbody>
                     </table>
@@ -198,8 +190,7 @@
                         <thead>
                         <tr id="admin-user-head">
                             <th class="user-head-item">Email</th>
-                            <th class="user-head-item">Password</th>
-                            <th colspan="2" class="user-head-item">Actions</th>
+                            <th class="user-head-item">Actions</th>
                         </tr>
                         </thead>
                         <tbody id="user-table">
@@ -215,6 +206,7 @@
                             <th class="order-head-item">Size</th>
                             <th class="order-head-item">Quantity</th>
                             <th class="order-head-item">Price</th>
+                            <th class="order-head-item">Actions</th>
                         </tr>
                         </thead>
                         <tbody id="order-table">
@@ -223,9 +215,9 @@
                 </div>
             </div>
         </div>
-<!--        <button onclick="topFunction()" id="toTop" title="Go to top">-->
-<!--            <i style="color: #0058A3" class="fa-solid fa-circle-arrow-up"></i>-->
-<!--        </button>-->
+        <!--        <button onclick="topFunction()" id="toTop" title="Go to top">-->
+        <!--            <i style="color: #0058A3" class="fa-solid fa-circle-arrow-up"></i>-->
+        <!--        </button>-->
     </main>
     <script src="../assets/js/admin.js"></script>
     <!--    <script src="../assets/js/global.js"></script>-->

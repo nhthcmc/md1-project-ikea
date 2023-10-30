@@ -120,9 +120,7 @@ function displayUsers() {
         result += `
         <tr id="user-table-item">
         <td class="user-table-item-detail">${newListUsers[i].email}</td>
-        <td class="user-table-item-detail">${newListUsers[i].password}</td>
-        <td><button id="edit-button" onclick="pressEditUsers(${i})">EDIT</button></td>
-        <td><button id="del-button" onclick="pressDeleteUsers(${i})">DELETE</button></td>
+        <td><button id="sendPromo-button" onclick="">SEND PROMO</button></td>
       </tr>
         `;
         document.getElementById("user-table").innerHTML = result;
@@ -201,9 +199,11 @@ function addOrders() {
             row.innerHTML = `
                 <td class="order-table-item-detail">${emailUser}</td>
                 <td class="order-table-item-detail">${productName}</td>
-                <td class="order-table-item-detail">${size}</td>
+                <td class="order-table-item-detail" style="text-transform: lowercase">${size}</td>
                 <td class="order-table-item-detail">${quantity}</td>                                
                 <td class="order-table-item-detail">${productPrice}</td>
+                <td><button id="assist-button" onclick="">ASSIST</button></td>              
+               
             `;
             orderTable.appendChild(row);
         }

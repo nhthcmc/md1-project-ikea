@@ -1,9 +1,19 @@
-//display
-function displayConfirm() {
+//place order
+function placeOrder() {
     event.preventDefault()
     document.querySelector(".confirm-content").style.display = "flex";
     document.querySelector(".order-content").style.display = "none";
     document.querySelector(".payment-content").style.display = "none";
+    const users = JSON.parse(localStorage.getItem("listUsers"));
+    const checkLogin = JSON.parse(localStorage.getItem("checkLogin"))
+    let user = users.find(user => user.idUser == checkLogin)
+    user.cartUser = []
+    localStorage.setItem("listUsers", JSON.stringify(users));
+    setTimeout(function () {
+        window.location.href = "http://localhost:63342/project-module%201/pages/homepage.html?_ijt=f04gn0g6d4gvfj5iem5nnh7q9b&_ij_reload=RELOAD_ON_SAVE";
+    }, 3000);
+    // clearCart();
+    // handleBack()
 }
 
 //cart order
@@ -28,9 +38,9 @@ function addOrders() {
 
             const row = document.createElement("tr");
             row.innerHTML = `
-<!--                <td class="order-list-item-detail"><img src="${imageLink}" alt="${productName}"></td>-->
+                <td class="order-list-item-detail"><img style="height: 150px; width: 150px" src="${imageLink}" alt="${productName}"></td>
                 <td class="order-list-item-detail">${productName}</td>
-                <td class="order-list-item-detail">${size}</td>
+                <td class="order-list-item-detail" style="text-transform: lowercase">${size}</td>
                 <td class="order-list-item-detail">${quantity}</td>                                
                 <td class="order-list-item-detail">${productPrice}</td>
             `;
@@ -42,3 +52,16 @@ function addOrders() {
 window.addEventListener("load", () => {
     addOrders();
 });
+
+//delete cart items
+// function clearCart() {
+//     localStorage.removeItem("cartItem");
+// }
+
+
+//redirect to homepage
+// function handleBack() {
+//     setTimeout(function() {
+//         window.location.href = "http://localhost:63342/project-module%201/pages/homepage.html?_ijt=f04gn0g6d4gvfj5iem5nnh7q9b&_ij_reload=RELOAD_ON_SAVE";
+//     }, 3000);
+// }
