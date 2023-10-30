@@ -5,14 +5,14 @@ function uuid() {
 let listUsers = JSON.parse(localStorage.getItem("listUsers")) || []
 
 console.log("listUsers: ", listUsers)
-listUsers.push({
-    idUser: uuid(),
-    email: "admin@b.com",
-    password: "123456",
-    password_confirmation: "123456",
-    cartUser: [],
-    isAdmin: true
-})
+// listUsers.push({
+//     idUser: uuid(),
+//     email: "admin@b.com",
+//     password: "123456",
+//     password_confirmation: "123456",
+//     cartUser: [],
+//     isAdmin: true
+// })
 localStorage.setItem("listUsers", JSON.stringify(listUsers))
 
 if (checkLogin()) {
@@ -104,19 +104,19 @@ function handleInputClear() {
 }
 
 //admin
-if (checkIsAdmin()) {
-    window.location.href = "http://localhost:63342/project-module%201/pages/admin.html?_ijt=ofsffjtb8i12mesruualvktav3&_ij_reload=RELOAD_ON_SAVE"
-}
-
-function checkIsAdmin() {
-    let checkLogin = localStorage.getItem("checkLogin")
-    let listUsers = JSON.parse(localStorage.getItem("listUsers"))
-
-    let user = listUsers.find(user => user.idUser == checkLogin)
-
-    if (user.isAdmin) {
-        return true
-    } else {
-        return false;
-    }
-}
+// if (checkIsAdmin()) {
+//     window.location.href = "http://localhost:63342/project-module%201/pages/admin.html?_ijt=ofsffjtb8i12mesruualvktav3&_ij_reload=RELOAD_ON_SAVE"
+// }
+//
+// function checkIsAdmin() {
+//     let checkLogin = localStorage.getItem("checkLogin")
+//     let listUsers = JSON.parse(localStorage.getItem("listUsers"))
+//
+//     let user = listUsers.find(user => user.idUser == checkLogin)
+//
+//     if (user.isAdmin) {
+//         return true
+//     } else {
+//         return false;
+//     }
+// }

@@ -1,65 +1,44 @@
-// function display() {
-//     let listUsers = JSON.parse(localStorage.getItem("listUsers"))
-//     let checkLogin = localStorage.getItem("checkLogin")
-//     let user = listUsers.find((item) => {
-//         return item.idUser == checkLogin
-//     })
-//     let cartUser = user ? user.cartUser : [];
-//     let result = "";
-//     for (let i = 0; i < listOrder.length; i++) {
-//         result += `
-//         <div class="orderListItem">
-//             <div class="orderItem">
-//                 <div class="orderItem-image">
-//                     <img src="${cartUser[i].imageLink}" alt="">
-//                 </div>
-//                 <div class="orderItem-info">
-//                         <h4>${cartUser[i].productName}</h4>
-//                        <p style="display: none">Product code: ${cartUser[i].idOption}</p>
-//                         <p style="text-transform: lowercase">${cartUser[i].size}</p>
-//                         <p style="color: #0058A3">${USDollar.format(cartUser[i].productPrice)}</p>
-//                 </div>
-//             </div>
-//         </div>
-//         `
-//     }
-//     console.log("result", result)
-//
-//     document.querySelector(".order-list").innerHTML = result;
-// }
-//
-// display()
-
-// let cartUser = JSON.parse(localStorage.getItem("cartUser"))
-//
-// function displayOrders() {
-//     let result = ``;
-//     for (let i = 0; i < cartUser.length; i++) {
-//         result += `
-//         <div class="orderListItem">
-//             <div class="orderItem">
-//                 <div class="orderItem-image">
-//                     <img src="${cartUser[i].imageLink}" alt="">
-//                 </div>
-//                 <div class="orderItem-info">
-//                     <h4>${cartUser[i].productName}</h4>
-//                     <p style="display: none">Product code: ${cartUser[i].idOption}</p>
-//                     <p style="text-transform: lowercase">${cartUser[i].size}</p>
-//                     <p style="color: #0058A3">${USDollar.format(cartUser[i].productPrice)}</p>
-//                 </div>
-//             </div>
-//         </div>
-//         `;
-//     }
-//     document.getElementById("order-list").innerHTML = result;
-// }
-//
-// displayOrders();
-
 //display
 function displayConfirm() {
     event.preventDefault()
-    document.querySelector(".confirm-content").style.display="flex";
-    document.querySelector(".order-content").style.display="none";
-    document.querySelector(".payment-content").style.display="none";
+    document.querySelector(".confirm-content").style.display = "flex";
+    document.querySelector(".order-content").style.display = "none";
+    document.querySelector(".payment-content").style.display = "none";
 }
+
+//cart order
+const confirmOrder = JSON.parse(localStorage.getItem("listUsers"));
+
+const orderList = document.querySelector("#order-list");
+
+orderList.innerHTML = "";
+
+function addOrders() {
+    for (const user of confirmOrder) {
+        const cartUser = user.cartUser;
+
+        for (const cartItem of cartUser) {
+            // const idOption = cartItem.idOption;
+            // const idProduct = cartItem.idProduct;
+            const imageLink = cartItem.imageLink;
+            const productName = cartItem.productName;
+            const size = cartItem.size;
+            const quantity = cartItem.quantity;
+            const productPrice = cartItem.productPrice;
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+<!--                <td class="order-list-item-detail"><img src="${imageLink}" alt="${productName}"></td>-->
+                <td class="order-list-item-detail">${productName}</td>
+                <td class="order-list-item-detail">${size}</td>
+                <td class="order-list-item-detail">${quantity}</td>                                
+                <td class="order-list-item-detail">${productPrice}</td>
+            `;
+            orderList.appendChild(row);
+        }
+    }
+}
+
+window.addEventListener("load", () => {
+    addOrders();
+});

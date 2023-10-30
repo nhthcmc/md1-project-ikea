@@ -1,5 +1,3 @@
-
-
 //sidebar
 let menu = document.querySelector(".menu");
 let sidebar = document.querySelector(".sidebar-container");
@@ -7,6 +5,7 @@ let sidebar = document.querySelector(".sidebar-container");
 menu.addEventListener("click", () => {
     sidebar.classList.toggle("menuClose");
 })
+
 //logout
 function checkLogout() {
     let confirmLogout = confirm("Confirm exit?")
@@ -18,18 +17,19 @@ function checkLogout() {
 }
 
 //products-table
-let listProductsStock = JSON.parse(localStorage.getItem("listProducts"))
+let listProductsStsock = JSON.parse(localStorage.getItem("listProducts"))
 
 function displayProducts() {
+    let showProducts = JSON.parse(localStorage.getItem("listProducts"))
     let result = ``;
-    for (let i = 0; i < listProductsStock.length; i++) {
+    for (let i = 0; i < showProducts.length; i++) {
         result += `
         <tr id="product-table-item">
-        <td class="product-table-item-detail"><img id="product-img" src="${listProductsStock[i].img}"/></td>
-        <td class="product-table-item-detail">${listProductsStock[i].name}</td>
-        <td class="product-table-item-detail">${listProductsStock[i].price}</td>
-        <td class="product-table-item-detail">${listProductsStock[i].text}</td>
-        <td class="product-table-item-detail">${listProductsStock[i].type}</td>
+        <td class="product-table-item-detail"><img id="product-img" src="${showProducts[i].img}"/></td>
+        <td class="product-table-item-detail">${showProducts[i].name}</td>
+        <td class="product-table-item-detail">${showProducts[i].price}</td>
+        <td class="product-table-item-detail">${showProducts[i].text}</td>
+        <td class="product-table-item-detail">${showProducts[i].type}</td>
         <td><button onclick="pressEditProducts(${i})">EDIT</button></td>
         <td><button onclick="pressDeleteProducts(${i})">DELETE</button></td>
 </tr>
@@ -40,12 +40,14 @@ function displayProducts() {
     document.querySelector(".box-container").style.display = "none";
     document.querySelector(".product-tab").style.display = "block";
     document.querySelector(".user-tab").style.display = "none";
-    resetValueProducts()
+    document.querySelector(".order-tab").style.display = "none";
+
+    // resetValueProducts()
 }
 
 
 function resetValueProducts() {
-    setInputValueProducts("product-img", "");
+    // setInputValueProducts("product-img", "");
     setInputValueProducts("product-name", "");
     setInputValueProducts("product-price", "");
     setInputValueProducts("product-descr", "");
@@ -73,21 +75,21 @@ function addProducts() {
         text,
         type,
     });
-    localStorage.setItem("listProductsStock", JSON.stringify(listProductsStock))
+    localStorage.setItem("listProducts", JSON.stringify(listProductsStock))
     displayProducts();
 
 }
 
 function pressDeleteProducts(index) {
     listProductsStock.splice(index, 1);
-    localStorage.setItem("listProductsStock", JSON.stringify(listProductsStock))
+    localStorage.setItem("listProducts", JSON.stringify(listProductsStock))
     displayProducts();
 }
 
 function pressEditProducts(index) {
     let newListProductsStock = JSON.parse(localStorage.getItem("listProducts"))
     let product = newListProductsStock[index];
-    setInputValueProducts("product-img", product.img);
+    // setInputValueProducts("product-img", product.img);
     setInputValueProducts("product-name", product.name);
     setInputValueProducts("product-price", product.price);
     setInputValueProducts("product-descr", product.text);
@@ -96,16 +98,16 @@ function pressEditProducts(index) {
 }
 
 function pressSaveProducts() {
-    let newListProductsStock = JSON.parse(localStorage.getItem("listProductsStock"))
+    let newListProductsStock = JSON.parse(localStorage.getItem("listProducts"))
     let index = document.getElementById("saveProduct").value
-    let newProduct = newListProductsStock[index];
-    newProduct.img = getInputValueProducts("product-img")
-    newProduct.name = getInputValueProducts("product-name")
-    newProduct.price = getInputValueProducts("product-price")
-    newProduct.text = getInputValueProducts("product-descr")
-    newProduct.type = getInputValueProducts("product-type")
-    newListProductsStock[index] = newProduct;
-    localStorage.setItem("listProductsStock", JSON.stringify(newListProductsStock))
+    // let newProduct = newListProductsStock[index];
+    newListProductsStock[index].img = getInputValueProducts("product-img")
+    newListProductsStock[index].name = getInputValueProducts("product-name")
+    newListProductsStock[index].price = getInputValueProducts("product-price")
+    newListProductsStock[index].text = getInputValueProducts("product-descr")
+    newListProductsStock[index].type = getInputValueProducts("product-type")
+    // newListProductsStock[index] = newProduct;
+    localStorage.setItem("listProducts", JSON.stringify(newListProductsStock))
     displayProducts()
 }
 
@@ -128,8 +130,11 @@ function displayUsers() {
         document.querySelector(".box-container").style.display = "none";
         document.querySelector(".user-tab").style.display = "block";
         document.querySelector(".product-tab").style.display = "none";
+        document.querySelector(".order-tab").style.display = "none";
+
     }
     resetValueUsers()
+
 }
 
 
@@ -171,5 +176,51 @@ function pressSaveUsers() {
     displayUsers()
 }
 
-//
+// order-table
+const showOrders = JSON.parse(localStorage.getItem("listUsers"));
+
+const orderTable = document.querySelector("#order-table");
+
+orderTable.innerHTML = "";
+
+function addOrders() {
+    for (const user of showOrders) {
+        const cartUser = user.cartUser;
+        const emailUser = user.email;
+
+        for (const cartItem of cartUser) {
+            // const idOption = cartItem.idOption;
+            // const idProduct = cartItem.idProduct;
+            // const imageLink = cartItem.imageLink;
+            const productName = cartItem.productName;
+            const size = cartItem.size;
+            const quantity = cartItem.quantity;
+            const productPrice = cartItem.productPrice;
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td class="order-table-item-detail">${emailUser}</td>
+                <td class="order-table-item-detail">${productName}</td>
+                <td class="order-table-item-detail">${size}</td>
+                <td class="order-table-item-detail">${quantity}</td>                                
+                <td class="order-table-item-detail">${productPrice}</td>
+            `;
+            orderTable.appendChild(row);
+        }
+    }
+}
+
+window.addEventListener("load", () => {
+    addOrders();
+});
+
+function displayOrders() {
+    document.querySelector(".report-container").style.display = "flex";
+    document.querySelector(".box-container").style.display = "none";
+    // addOrders()
+    document.querySelector(".product-tab").style.display = "none";
+    document.querySelector(".user-tab").style.display = "none";
+    document.querySelector(".order-tab").style.display = "block";
+
+}
 

@@ -1,6 +1,7 @@
 function uuid() {
     return new Date().getMilliseconds() + Math.floor(Math.random() * 999999999)
 }
+
 let listProductsStock = [
     {
         img: "../assets/img/products/vimle-beige-m.avif",
@@ -1102,4 +1103,3 @@ function decreaseQuantity(index) {
     }
 }
 
-//

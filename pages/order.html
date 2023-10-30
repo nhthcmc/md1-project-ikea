@@ -27,16 +27,30 @@
     <main>
         <div class="container">
             <div class="order-content">
-                <h1>My cart</h1>
-                <div id="order-list">
+                <h1>My order</h1>
+                <div id="order-container">
+                    <table id="payment-order">
+                        <thead>
+                        <tr id="payment-order-head">
+                            <th class="payment-order-head-i"></th>
+                            <th class="payment-order-head-i">Item</th>
+                            <th class="payment-order-head-i">Size</th>
+                            <th class="payment-order-head-i">Quantity</th>
+                            <th class="payment-order-head-i">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody id="order-list">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="order-total">
 
                 </div>
             </div>
             <div class="payment-content">
                 <h1>Payment</h1>
-                <div class="payment-total">
 
-                </div>
                 <div class="payment-container">
                     <form class="payment--form" method="POST" id="form-3">
                         <h2>Shipping info</h2>

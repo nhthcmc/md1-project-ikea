@@ -69,7 +69,7 @@ body {
 }
 
 .menuClose {
-    width: 80px;
+    width: 80px !important;
 }
 
 .nav-container {
@@ -132,6 +132,7 @@ main {
     padding: 30px 0 20px 10px;
 }
 
+
 .sidebar-container {
     height: calc(100vh - 20px);
     width: 250px;
@@ -160,6 +161,10 @@ main {
     background-color: #dadada;
     color: white;
     cursor: pointer;
+}
+
+.sidebar-item {
+    /*font-size: 45px;*/
 }
 
 .sidebar-img {
@@ -288,6 +293,7 @@ main {
 
 #product-controller {
     line-height: 25px;
+    border-bottom: 1px solid #0058A3;
 
     /*    border: 1px solid #0058A3;*/
     /*    border-radius: 30px;*/
@@ -344,7 +350,7 @@ main {
     letter-spacing: 0;
 }
 
-#product-table {
+#product_table {
     width: 1120px;
     margin-top: 15px;
 }
@@ -364,4 +370,5 @@ main {
     letter-spacing: 0;
     font-weight: 600;
 }
+
 

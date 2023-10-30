@@ -1,23 +1,4 @@
 /*navigation*/
-/*.nav-right {*/
-/*    display: flex;*/
-/*    gap: 30px;*/
-/*    font-size: 25px;*/
-/*    padding: 20px;*/
-/*    margin-right: 20px;*/
-/*}*/
-
-/*.nav-right li:hover {*/
-/*    color: grey;*/
-/*}*/
-
-/*.nav-right__mobile i {*/
-/*    color: #1a1a1a;*/
-/*    font-size: 24px;*/
-/*    padding-left: 20px;*/
-/*    cursor: pointer;*/
-/*}*/
-
 .nav-right__cart--number {
     display: flex;
     color: #fff;
@@ -100,12 +81,12 @@
     margin-top: 3px;
 }
 
-.search-input__delete {
-    position: absolute;
-    right: 21%;
-    bottom: 27px;
-    cursor: pointer;;
-}
+/*.search-input__delete {*/
+/*    position: absolute;*/
+/*    right: 21%;*/
+/*    bottom: 27px;*/
+/*    cursor: pointer;;*/
+/*}*/
 
 /*search input*/
 .search-container {
@@ -189,11 +170,6 @@
     justify-content: center;
 }
 
-.header-right__lang {
-    /*margin-left: 20px;*/
-}
-
-
 .header-right__lang .active {
     /*font-weight: bold;*/
     border-right: 2px solid black;
@@ -217,6 +193,10 @@
 
 img {
     vertical-align: middle;
+}
+
+.banner-section {
+    margin-bottom: 15px;
 }
 
 .banner-container {
@@ -270,10 +250,7 @@ img {
     border: none;
     outline: none;
     cursor: pointer;
-    /*background-color: #FBDA0C;*/
     background: none;
-    /*border-radius: 100rem;*/
-    /*overflow: hidden;*/
 }
 
 .fa-solid.fa-circle-arrow-up:hover {
@@ -288,10 +265,6 @@ img {
     margin: 50px auto;
     justify-content: space-evenly;
 }
-
-/*.product {*/
-/*    gap: 100px;*/
-/*}*/
 
 .product-container .product-item {
     /*border: 2px solid #0058A3;*/
@@ -329,16 +302,6 @@ img {
 }
 
 /*productDetail*/
-.productDetail-image {
-    width: 50%;
-}
-
-.productDetail-descr {
-    display: flex;
-    flex-direction: column;
-}
-
-/**/
 .product {
     display: flex;
     width: 90%;
@@ -347,6 +310,7 @@ img {
 }
 
 .productDetail-image {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -356,6 +320,8 @@ img {
 }
 
 .productDetail-descr {
+    display: flex;
+    flex-direction: column;
     flex: 1;
 }
 
@@ -501,7 +467,6 @@ img {
 .cart-button {
     padding: 0 10px;
 }
-
 
 .cart-continue-btn {
     width: 48%;

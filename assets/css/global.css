@@ -130,6 +130,3 @@ body {
     width: 30%;
     margin-top: 15px;
 }
-
-/*:hover{background: url('${params[i].view}') no-repeat*/
-/*style=":hover{background-image: url('${params[i].view}') no-repeat; display: none}"*/
