@@ -17,7 +17,7 @@ function checkLogout() {
 }
 
 //products-table
-let listProductsStsock = JSON.parse(localStorage.getItem("listProducts"))
+let listProductsStock = JSON.parse(localStorage.getItem("listProducts"))
 
 function displayProducts() {
     let showProducts = JSON.parse(localStorage.getItem("listProducts"))
